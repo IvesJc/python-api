@@ -13,7 +13,6 @@ e. Rota “funcionarios/<str: nome>” para alterar um funcionário.
 
 f. Rota “funcionarios/<str: nome>” para excluir um funcionário.
 '''
-
 from flask import Flask, jsonify, request
 import json
 
@@ -90,7 +89,7 @@ def inserir_func():
     return jsonify(lista_func)
 
 
-@app.route("/funcionarios/<nome>", methods=['PUT'])
+@app.route("/funcionarios/<id>", methods=['PUT'])
 def atualizar_func(nome):
     func_alterado = request.get_json()
     for i, func in enumerate(lista_func):
